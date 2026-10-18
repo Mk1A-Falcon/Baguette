@@ -27,7 +27,7 @@ app.command("/baguette-help", async ({command,ack,respond}) => {
 });
 });
 
-app.command("/baguette-flip", async ({command,ack,respond}) => {
+app.command("/baguette-", async ({command,ack,respond}) => {
   await ack();
   await respond();
 
