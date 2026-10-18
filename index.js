@@ -22,21 +22,29 @@ app.command("/baguette-help", async ({command,ack,respond}) => {
       text: `Availaible Commands:
       /baguette-ping : Check the bot's latency
       /baguette-flip : Randomly rolls Heads or Tails.
-      /baguette-nasa : Fetches an image from the Nasa API.
+      /baguette-welcome @user : Welcomes a user to the channel.
+      /baguette-dog : Fetches an image from the Nasa API.
       /baguette-help : The help command for @Baguette slackbot(current occurence)`
 });
 });
 
-app.command("/baguette-", async ({command,ack,respond}) => {
+app.command("/baguette-dog", async ({command,ack,respond}) => {
   await ack();
-  await respond();
-
-  const roll = Math.random()
-  if (roll==1) {}
-
+  const response = await axios.get("https://dog.ceo/api/breeds/image/random");
+  try {
+  await respond ({
+    blocks: [{
+      type: 'image',
+      image_url: response.data.message,
+      alt_text: 'a random dog'
+    }
+  ]
+  }); }
+  catch(err) {
+    console.error(err);
+    await respond ({text: `Failed to fetch one :( Looks like even the dogs are angry.`})
+  }
 });
-
-
 
 
 (async () => {
