@@ -15,6 +15,11 @@ app.command("/baguette-ping", async ({command,ack,respond}) => {
   await respond ({ text: `Baguette is Up!\nLatency: ${latency}ms`});
 });
 
+app.command("/baguette-flip", async ({command,ack,respond})) => {
+  const roll = Math.random()
+  if (roll==1);
+
+});
 
 
 
