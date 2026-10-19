@@ -30,8 +30,8 @@ app.command("/baguette-flip", async ({command,ack,respond}) => {
   await respond ({ 
     text : result,
     response_type : "in_channel",
-})
-}
+});
+});
 
 app.command("/baguette-help", async ({command,ack,respond}) => {
   await ack();
