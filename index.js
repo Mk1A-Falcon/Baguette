@@ -16,13 +16,28 @@ app.command("/baguette-ping", async ({command,ack,respond}) => {
   await respond ({ text: `Baguette is Up!\nLatency: ${latency}ms`});
 });
 
+app.command("/baguette-flip", async ({command,ack,respond}) => {
+  const roll = Math.random()
+  let result;
+  await ack();
+
+  if (roll > 0.5) {
+   result = `The flip was 👀 \nHeads! :sho:`}
+  else {
+   result = `The flip was 👀 \nTails! :dam:`
+  }
+
+  await respond ({ 
+    text : result,
+    response_type : "in_channel",
+})
+}
+
 app.command("/baguette-help", async ({command,ack,respond}) => {
   await ack();
   await respond({
       text: `Availaible Commands:
       /baguette-ping : Check the bot's latency
-      /baguette-flip : Randomly rolls Heads or Tails.
-      /baguette-welcome @user : Welcomes a user to the channel.
       /baguette-dog : Fetches an image from the Nasa API.
       /baguette-help : The help command for @Baguette slackbot(current occurence)`
 });
