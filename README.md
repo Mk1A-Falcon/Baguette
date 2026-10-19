@@ -4,9 +4,13 @@ Currently the following commands work-
 1. /baguette-ping : Pings the bot for it's latency
 2. /baguette-help : Lists all commands by the @baguette slack bot.
 3. /baguette-dog : Fetches an image of a dawg from the dog.ceo [dog API](https://dog.ceo/dog-api)!
+4. /baguette-flip : Randomly flips Heads or Tails.
+5. /baguette-customs-incident : Tells the lore behind the customs...
 
 I have a lot more planned for this bot such as-   
-Auto detecting user entry in a channel and welcoming them.  
-API features to update new entries to my blog website!
+1. Auto detecting user entry in a channel and welcoming them.  
+2. API features to update new entries to my blog website!
+
+The bot is hosted on [NEST](https://nest.hackclub.com/) and runs 24/7!  
 
 Anyways, Thanks for reading this README :)
