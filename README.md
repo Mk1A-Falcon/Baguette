@@ -5,7 +5,8 @@ Currently the following commands work-
 2. /baguette-help : Lists all commands by the @baguette slack bot.
 3. /baguette-dog : Fetches an image of a dawg from the dog.ceo [dog API](https://dog.ceo/dog-api)!
 4. /baguette-flip : Randomly flips Heads or Tails.
-5. /baguette-customs-incident : Tells the lore behind the customs...
+5. /baguette-quote : Fetches the quote of the day from ZEN QUOTES [zen](https://docs.zenquotes.io/zenquotes-documentation/)!  
+6. /baguette-customs-incident : Tells the lore behind the customs...
 
 I have a lot more planned for this bot such as-   
 1. Auto detecting user entry in a channel and welcoming them.  
