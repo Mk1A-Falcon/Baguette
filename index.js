@@ -16,6 +16,7 @@ app.command("/baguette-ping", async ({command,ack,respond}) => {
   await respond ({ text: `Baguette is Up! :yay:\nLatency: ${latency}ms`});
 });
 
+
 app.command("/baguette-flip", async ({command,ack,respond}) => {
   const roll = Math.random()
   let result;
@@ -32,6 +33,7 @@ app.command("/baguette-flip", async ({command,ack,respond}) => {
     response_type : "in_channel",
 });
 });
+
 app.command("/baguette-customs-incident", async ({command,ack,respond}) => {
   await ack();
   await respond ({
@@ -46,9 +48,10 @@ app.command("/baguette-help", async ({command,ack,respond}) => {
       text: `Availaible Commands:
       1. Actual Commands-
         /baguette-ping : Check the bot's latency
-        /baguette-dog : Fetches an image from the Nasa API.
-        /baguette-help : The help command for @Baguette slackbot (currently ran command)
-        /baguette-flip : Randomly flips a coin!
+        /baguette-dog : Fetches an image from the Dog.ceo API.
+        /baguette-help : The help command for @Baguette slackbot (current occurence)
+        /baguette-flip : Randomly flips a coin! (in_channel)
+        /baguette-quote : Expels out the quote of the day! (in_channel)
       2. Joke Commands- 
         /baguette-customs-incident : Tells the lore behind the customs...`
 });
@@ -70,6 +73,25 @@ app.command("/baguette-dog", async ({command,ack,respond}) => {
     console.error(err);
     await respond ({text: `Failed to fetch one :( Looks like even the dogs are angry.`})
   }
+});
+
+app.command("/baguette-quote", async ({command,ack,respond})  => {
+  await ack()
+try {
+  const response = await axios.get("https://zenquotes.io/api/today");
+  const quote = response.data[0]; //since it's a array https://docs.zenquotes.io/zenquotes-documentation/
+  await respond ({
+    text : `${quote.q} \n By${quote.a}`,
+    response_type : "in_channel"
+  });
+  }
+  catch(err) {
+    console.error(err);
+    await respond ({
+      text: `AWW MAN how am I supposed to get my motivation now :sad-pf:\n Error fetching quote :pf:`
+    })
+  }
+
 });
 
 
