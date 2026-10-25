@@ -75,6 +75,14 @@ app.command("/baguette-dog", async ({command,ack,respond}) => {
   }
 });
 
+app.event('member_joined_channel', async ({event, client}) =>{
+  await client.chat.postMessage ({
+    channel :event.channel,
+    text : `WELCOME TO THE CHANNEL <@${event.user}> :RAHH:\n Prepare to be disappointed :omgg2: Also Join #back-to-basics while you're at it :constipation:
+    CC <@U0AE3R4FR3R>`
+  })
+})
+
 app.command("/baguette-quote", async ({command,ack,respond})  => {
   await ack()
 try {
