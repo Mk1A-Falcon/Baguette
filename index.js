@@ -78,7 +78,7 @@ app.command("/baguette-dog", async ({command,ack,respond}) => {
 app.event('member_joined_channel', async ({event, client}) =>{
   await client.chat.postMessage ({
     channel :event.channel,
-    text : `:SIREN1: *wELCOME TO THE CHANNEL* <@${event.user}> :RAHH:\nPrepare to be disappointed :omgg2: Also Join :shard:<#C0BBY3B43EJ> while you're at it :constipation:\nCC <@U0AE3R4FR3R>`
+    text : `:SIREN1: *WELCOME TO THE CHANNEL* <@${event.user}> :RAHH::siren1:\n*Prepare to be disappointed* :omgg2: Also Join :shard:<#C0BBY3B43EJ> while you're at it :constipation:\nCC <@U0AE3R4FR3R>`
   })
 })
 
