@@ -81,7 +81,7 @@ try {
   const response = await axios.get("https://zenquotes.io/api/today");
   const quote = response.data[0]; //since it's a array https://docs.zenquotes.io/zenquotes-documentation/
   await respond ({
-    text : `${quote.q} \n By${quote.a}`,
+    text : `${quote.q} \n By ${quote.a}`,
     response_type : "in_channel"
   });
   }
