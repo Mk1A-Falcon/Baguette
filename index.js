@@ -82,13 +82,29 @@ app.event('member_joined_channel', async ({event, client}) =>{
   })}
 })
 
+app.message(/Mk1A/i, async ({message,say}) => {
+  try {
+    if (message.subtype === 'bot_message') return; /// code line copied from Gemini(ai) to prevent relooping between bots
+    await say ({ //so say is for app.messages mhmm goog
+      message: "Did someone call for a *FRESH BAGUETTE?* :frenchparrot:\nCC <@U0AE3R4FR3R>",
+      thread_ts : message.ts, 
+    })
+  }
+  catch(err) { // I realized err can be any string Ig but it's alr
+    console.error(err)
+    await say ({
+      message : "Aww man I can't ping baguette now :3d-sad-emoji:"
+    })
+  }
+});
+
 app.command("/baguette-quote", async ({command,ack,respond})  => {
   await ack()
 try {
   const response = await axios.get("https://zenquotes.io/api/today");
   const quote = response.data[0]; //since it's a array https://docs.zenquotes.io/zenquotes-documentation/
   await respond ({
-    text : `${quote.q} \n By ${quote.a}`,
+    text : `${quote.q} \nBy ${quote.a}`,
     response_type : "in_channel"
   });
   }
