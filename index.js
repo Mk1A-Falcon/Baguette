@@ -53,7 +53,10 @@ app.command("/baguette-help", async ({command,ack,respond}) => {
         /baguette-flip : Randomly flips a coin! (in_channel)
         /baguette-quote : Expels out the quote of the day! (in_channel)
       2. Joke Commands- 
-        /baguette-customs-incident : Tells the lore behind the customs...`
+        /baguette-customs-incident : Tells the lore behind the customs...
+      EVENTS:
+      1. Triggers with a automated response on the mention of "Mk1A"(not case sensitive)(Does not get triggered by bot_messages).
+      2. Welcomes user to the channel upon entry.(Strictly restricted to the channel <#C0BMFNBG1FU>)`
 });
 });
 
