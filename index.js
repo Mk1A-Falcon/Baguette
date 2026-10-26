@@ -96,7 +96,7 @@ app.message(/Mk1A/i, async ({message,say}) => {
   catch(err) { // I realized err can be any string Ig but it's alr
     console.error(err)
     await say ({
-      message : "Aww man I can't ping baguette now :3d-sad-emoji:"
+      text : "Aww man I can't ping baguette now :3d-sad-emoji:"
     })
   }
 });
