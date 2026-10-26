@@ -89,7 +89,7 @@ app.message(/Mk1A/i, async ({message,say}) => {
   try {
     if (message.subtype === 'bot_message') return; /// code line copied from Gemini(ai) to prevent relooping between bots
     await say ({ //so say is for app.messages mhmm goog
-      message: "Did someone call for a *FRESH BAGUETTE?* :frenchparrot:\nCC <@U0AE3R4FR3R>",
+      text: "Did someone call for a *FRESH BAGUETTE?* :frenchparrot:\nCC <@U0AE3R4FR3R>",
       thread_ts : message.ts, 
     })
   }
